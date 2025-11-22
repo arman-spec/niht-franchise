@@ -62,7 +62,7 @@ export default function FeaturesFaq2() {
   }, []);
 
   return (
-    <section className="relative bg-gray-50 dark:bg-black py-24">
+    <section className="relative bg-gray-50 notdark:bg-black py-24">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-start">
         {/* LEFT: Scrollable content cards */}
         <div ref={containerRef} className="space-y-12 relative">
@@ -81,19 +81,19 @@ export default function FeaturesFaq2() {
                 viewport={{ once: true }}
                 className={`relative transition-all duration-500 transform ${
                   activeIndex === index
-                    ? "scale-100 shadow-2xl z-20 bg-white dark:bg-zinc-900"
-                    : "scale-95 opacity-85 bg-white/90 dark:bg-zinc-900/80"
-                } border border-gray-200 dark:border-zinc-800 rounded-2xl p-8 shadow-md`}
+                    ? "scale-100 shadow-2xl z-20 bg-white notdark:bg-zinc-900"
+                    : "scale-95 opacity-85 bg-white/90 notdark:bg-zinc-900/80"
+                } border border-gray-200 notdark:border-zinc-800 rounded-2xl p-8 shadow-md`}
               >
                 <div className="flex items-start space-x-4">
                   <div className="p-4 bg-sky-500 text-white rounded-full shadow-lg">
                     <Icon size={26} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                    <h3 className="text-xl font-semibold text-gray-900 notdark:text-white mb-2">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-[15px]">
+                    <p className="text-gray-600 notdark:text-gray-300 leading-relaxed text-[15px]">
                       {feature.description}
                     </p>
                   </div>
@@ -111,7 +111,7 @@ export default function FeaturesFaq2() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -30 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="w-full max-w-md rounded-3xl overflow-hidden border border-gray-100 dark:border-zinc-800 shadow-2xl"
+            className="w-full max-w-md rounded-3xl overflow-hidden border border-gray-100 notdark:border-zinc-800 shadow-2xl"
           >
             <Image
               src={features[activeIndex].image}

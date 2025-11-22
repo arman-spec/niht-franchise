@@ -103,7 +103,7 @@ export function Features({
           <span className="text-sky-500 font-semibold text-sm uppercase tracking-wider">
             AI Mentors. Real Results.
           </span>
-          <h2 className="text-2xl md:text-4xl font-bold text-black dark:text-white mt-4 mb-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-black notdark:text-white mt-4 mb-6">
             AI That Actually Teaches
           </h2>
         </div>
@@ -128,7 +128,7 @@ export function Features({
                   <div
                     className={`flex flex-col lg:flex-row items-start space-x-4 p-3 max-w-sm lg:max-w-2xl transition-all duration-300 ${
                       isActive
-                        ? "bg-white dark:bg-black/80 shadow-xl dark:drop-shadow-lg rounded-xl border border-gray-200 dark:border-none"
+                        ? "bg-white notdark:bg-black/80 shadow-xl notdark:drop-shadow-lg rounded-xl border border-gray-200 notdark:border-none"
                         : ""
                     }`}
                   >
@@ -137,7 +137,7 @@ export function Features({
                       className={`p-3 hidden md:block rounded-full transition-all duration-300 ${
                         isActive
                           ? "bg-sky-500 text-white"
-                          : "bg-sky-500/10 dark:bg-black/80 text-sky-500"
+                          : "bg-sky-500/10 notdark:bg-black/80 text-sky-500"
                       }`}
                     >
                       <Icon size={24} />
@@ -148,8 +148,8 @@ export function Features({
                       <h3
                         className={`text-lg md:mt-4 lg:mt-0 font-semibold mb-2 ${
                           isActive
-                            ? "text-gray-900 dark:text-white"
-                            : "text-gray-700 dark:text-white/80"
+                            ? "text-gray-900 notdark:text-white"
+                            : "text-gray-700 notdark:text-white/80"
                         }`}
                       >
                         {feature.title}
@@ -158,18 +158,18 @@ export function Features({
                       <p
                         className={`text-sm transition-colors ${
                           isActive
-                            ? "text-gray-600 dark:text-white/60"
-                            : "text-gray-500 dark:text-white/40"
+                            ? "text-gray-600 notdark:text-white/60"
+                            : "text-gray-500 notdark:text-white/40"
                         }`}
                       >
                         {feature.description}
                       </p>
 
                       {/* PROGRESS BAR */}
-                      <div className="mt-4 bg-white dark:bg-black/80 rounded-sm h-1 overflow-hidden">
+                      <div className="mt-4 bg-white notdark:bg-black/80 rounded-sm h-1 overflow-hidden">
                         {isActive && (
                           <motion.div
-                            className={`h-full ${progressGradientLight} dark:${progressGradientDark}`}
+                            className={`h-full ${progressGradientLight} notdark:${progressGradientDark}`}
                             initial={{ width: 0 }}
                             animate={{ width: `${progress}%` }}
                             transition={{ duration: 0.1, ease: "linear" }}
@@ -192,7 +192,7 @@ export function Features({
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
               <Image
-                className="rounded-2xl border dark:border-none border-gray-50 shadow-lg dark:drop-shadow-lg"
+                className="rounded-2xl border notdark:border-none border-gray-50 shadow-lg notdark:drop-shadow-lg"
                 src={features[currentFeature].image}
                 alt={features[currentFeature].title}
                 width={600}
@@ -218,7 +218,7 @@ export function Features({
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                 >
-                  <div className="bg-white dark:bg-black/80 rounded-xl shadow-lg p-6 flex flex-col h-full">
+                  <div className="bg-white notdark:bg-black/80 rounded-xl shadow-lg p-6 flex flex-col h-full">
                     {/* ICON */}
                     <div className="bg-sky-500 text-white rounded-full p-4 mb-4 mx-auto">
                       <Icon size={32} />
@@ -230,14 +230,14 @@ export function Features({
                     </h3>
 
                     {/* DESCRIPTION */}
-                    <p className="text-sm text-gray-600 dark:text-white/60 text-center mb-4">
+                    <p className="text-sm text-gray-600 notdark:text-white/60 text-center mb-4">
                       {feature.description}
                     </p>
 
                     {/* IMAGE */}
                     <div className="flex-1 flex items-center justify-center">
                       <Image
-                        className="rounded-xl border dark:border-none border-gray-50 shadow-lg dark:drop-shadow-lg"
+                        className="rounded-xl border notdark:border-none border-gray-50 shadow-lg notdark:drop-shadow-lg"
                         src={feature.image}
                         alt={feature.title}
                         width={340}
@@ -246,10 +246,10 @@ export function Features({
                     </div>
 
                     {/* PROGRESS BAR */}
-                    <div className="w-full mt-4 bg-white dark:bg-black/80 rounded-sm h-1 overflow-hidden">
+                    <div className="w-full mt-4 bg-white notdark:bg-black/80 rounded-sm h-1 overflow-hidden">
                       {currentFeature === index && (
                         <motion.div
-                          className={`h-full ${progressGradientLight} dark:${progressGradientDark}`}
+                          className={`h-full ${progressGradientLight} notdark:${progressGradientDark}`}
                           initial={{ width: 0 }}
                           animate={{ width: `${progress}%` }}
                           transition={{ duration: 0.1, ease: "linear" }}

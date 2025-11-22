@@ -54,8 +54,8 @@ const ItemCard = ({ item }: { item: CarouselItem }) => (
       <div className="p-4 flex flex-col justify-between flex-1">
         <div>
           <div className="flex items-center justify-between">
-            <h3 className="text-base font-semibold leading-tight text-gray-900 dark:text-white">{item.title}</h3>
-            <div className="ml-2 flex items-center gap-1 rounded-full bg-yellow-100 px-2 py-0.5 text-xs font-semibold text-yellow-700 dark:bg-yellow-900/50 dark:text-yellow-400">
+            <h3 className="text-base font-semibold leading-tight text-gray-900 notdark:text-white">{item.title}</h3>
+            <div className="ml-2 flex items-center gap-1 rounded-full bg-yellow-100 px-2 py-0.5 text-xs font-semibold text-yellow-700 notdark:bg-yellow-900/50 notdark:text-yellow-400">
               <Star className="h-3 w-3" />
               <span>{item.rating.toFixed(1)}</span>
             </div>

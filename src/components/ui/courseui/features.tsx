@@ -46,7 +46,7 @@ export default function FeatureSection() {
       <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         {/* LEFT SIDE - Task Loop with Vertical Bar */}
         <div className="relative w-full max-w-sm">
-          <Card className="overflow-hidden bg-muted/30 dark:bg-muted/20 backdrop-blur-md shadow-xl rounded-lg">
+          <Card className="overflow-hidden bg-muted/30 notdark:bg-muted/20 backdrop-blur-md shadow-xl rounded-lg">
             <CardContent className="relative h-[320px] p-0 overflow-hidden">
               {/* Scrollable Container */}
               <div className="relative h-full overflow-hidden">
@@ -64,14 +64,14 @@ export default function FeatureSection() {
                   {[...tasks, ...tasks].map((task, i) => (
                     <div
                       key={i}
-                      className="flex items-center gap-3 px-4 py-3 border-b border-gray-200 dark:border-gray-700 relative"
+                      className="flex items-center gap-3 px-4 py-3 border-b border-gray-200 notdark:border-gray-700 relative"
                     >
                       {/* Icon + Content */}
                       <div className="flex items-center justify-between flex-1">
                         <div className="flex items-center gap-2">
-                          <div className="bg-gray-200 dark:bg-gray-700 w-10 h-10 rounded-xl shadow-md" />
+                          <div className="bg-gray-200 notdark:bg-gray-700 w-10 h-10 rounded-xl shadow-md" />
                           <div>
-                            <p className="text-sm font-medium text-gray-900 dark:text-white">{task.title}</p>
+                            <p className="text-sm font-medium text-gray-900 notdark:text-white">{task.title}</p>
                             <p className="text-xs text-gray-500">{task.subtitle}</p>
                           </div>
                         </div>
@@ -94,9 +94,9 @@ export default function FeatureSection() {
           <Badge variant="secondary" className="px-3 py-1 text-sm">
             Workflow Automation
           </Badge>
-          <h3 className="text-lg sm:text-md lg:text-2xl font-normal text-gray-900 dark:text-white leading-relaxed">
+          <h3 className="text-lg sm:text-md lg:text-2xl font-normal text-gray-900 notdark:text-white leading-relaxed">
             Automate repetitive tasks {" "}
-            <span className="text-gray-500 dark:text-gray-400 text-sm sm:text-base lg:text-2xl">we help you
+            <span className="text-gray-500 notdark:text-gray-400 text-sm sm:text-base lg:text-2xl">we help you
               streamline operations with AI-driven automation — from payroll and
               reporting to employee tracking and smart notifications. Our
               solutions reduce human error, save time, and scale effortlessly with

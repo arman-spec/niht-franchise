@@ -309,7 +309,7 @@ const InteractiveBentoGallery: React.FC<InteractiveBentoGalleryProps> = ({ media
                 <motion.h1
                     className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent 
                              bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900
-                             dark:from-white dark:via-gray-200 dark:to-white"
+                             notdark:from-white notdark:via-gray-200 notdark:to-white"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -317,7 +317,7 @@ const InteractiveBentoGallery: React.FC<InteractiveBentoGalleryProps> = ({ media
                     {title}
                 </motion.h1>
                 <motion.p
-                    className="mt-2 text-sm sm:text-base text-gray-600 dark:text-gray-400"
+                    className="mt-2 text-sm sm:text-base text-gray-600 notdark:text-gray-400"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}

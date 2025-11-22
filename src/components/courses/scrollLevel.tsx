@@ -151,7 +151,7 @@ export default function ScrollLevel() {
 
         {/* ⭐ SCROLLING CARD BELOW ACCORDION */}
         <div className="mt-6">
-          <Card className="overflow-hidden bg-muted/30 dark:bg-muted/20 backdrop-blur-md shadow-xl rounded-lg">
+          <Card className="overflow-hidden bg-muted/30 notdark:bg-muted/20 backdrop-blur-md shadow-xl rounded-lg">
             <CardContent className="relative h-[320px] p-0 overflow-hidden">
               <motion.div
                 className="flex flex-col gap-2 absolute w-full"
@@ -166,11 +166,11 @@ export default function ScrollLevel() {
                 {[...tasks, ...tasks].map((task, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-3 px-4 py-3 border-b border-gray-200 dark:border-gray-700"
+                    className="flex items-center gap-3 px-4 py-3 border-b border-gray-200 notdark:border-gray-700"
                   >
                     <div className="flex items-center justify-between flex-1">
                       <div className="flex items-center gap-2">
-                        <div className="bg-gray-200 dark:bg-gray-700 w-10 h-10 rounded-xl shadow-md" />
+                        <div className="bg-gray-200 notdark:bg-gray-700 w-10 h-10 rounded-xl shadow-md" />
                         <div>
                           <p className="text-sm font-medium">{task.title}</p>
                           <p className="text-xs text-gray-500">{task.subtitle}</p>
@@ -202,7 +202,7 @@ export default function ScrollLevel() {
               className={`w-full text-left px-4 py-3 rounded-lg border ${
                 activeLevel === index
                   ? "bg-primary text-white border-primary"
-                  : "bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border-gray-300 dark:border-gray-700"
+                  : "bg-white notdark:bg-gray-800 text-gray-800 notdark:text-gray-200 border-gray-300 notdark:border-gray-700"
               }`}
             >
               <h3 className="font-semibold">{level.name}</h3>
@@ -212,7 +212,7 @@ export default function ScrollLevel() {
 
           {/* Desktop scroll card */}
           <div className="mt-4">
-            <Card className="overflow-hidden bg-muted/30 dark:bg-muted/20 backdrop-blur-md shadow-xl rounded-lg">
+            <Card className="overflow-hidden bg-muted/30 notdark:bg-muted/20 backdrop-blur-md shadow-xl rounded-lg">
               <CardContent className="relative h-[320px] p-0 overflow-hidden">
                 <motion.div
                   className="flex flex-col gap-2 absolute w-full"
@@ -231,7 +231,7 @@ export default function ScrollLevel() {
                     >
                       <div className="flex items-center justify-between flex-1">
                         <div className="flex items-center gap-2">
-                          <div className="bg-gray-300 dark:bg-gray-700 w-10 h-10 rounded-xl" />
+                          <div className="bg-gray-300 notdark:bg-gray-700 w-10 h-10 rounded-xl" />
                           <div>
                             <p className="text-sm font-medium">{task.title}</p>
                             <p className="text-xs text-gray-500">{task.subtitle}</p>

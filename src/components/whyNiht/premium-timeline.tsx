@@ -73,7 +73,7 @@ export const QuantumTimeline = ({ steps = DEMO_STEPS, defaultStep }: QuantumTime
   const activeIndex = steps.findIndex(step => step.id === activeStep);
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-8 font-sans bg-white dark:bg-black rounded-2xl shadow-2xl">
+    <div className="w-full max-w-6xl mx-auto p-8 font-sans bg-white notdark:bg-black rounded-2xl shadow-2xl">
       {/* Top Navigation */}
       <TimelineNav steps={steps} activeStep={activeStep} onStepClick={setActiveStep} />
 
@@ -105,10 +105,10 @@ export const QuantumTimeline = ({ steps = DEMO_STEPS, defaultStep }: QuantumTime
 const TimelineNav = ({ steps, activeStep, onStepClick }: { steps: ProcessStep[], activeStep: string, onStepClick: (id: string) => void }) => (
   <div className="flex items-center justify-between">
     <div className="flex items-center gap-4">
-      <div className="w-10 h-10 bg-blue-500/10 dark:bg-blue-500/20 text-blue-500 rounded-full flex items-center justify-center font-bold">Q</div>
-      <span className="text-xl font-bold text-slate-800 dark:text-white">Quantum Process</span>
+      <div className="w-10 h-10 bg-blue-500/10 notdark:bg-blue-500/20 text-blue-500 rounded-full flex items-center justify-center font-bold">Q</div>
+      <span className="text-xl font-bold text-slate-800 notdark:text-white">Quantum Process</span>
     </div>
-    <div className="hidden md:flex items-center gap-2 p-1 bg-slate-100 dark:bg-slate-800 rounded-full">
+    <div className="hidden md:flex items-center gap-2 p-1 bg-slate-100 notdark:bg-slate-800 rounded-full">
       {steps.map(step => (
         <button
           key={step.id}
@@ -116,8 +116,8 @@ const TimelineNav = ({ steps, activeStep, onStepClick }: { steps: ProcessStep[],
           className={cn(
             "px-4 py-1 rounded-full text-sm font-semibold transition-colors",
             activeStep === step.id
-              ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm"
-              : "text-slate-600 dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-700"
+              ? "bg-white notdark:bg-slate-900 text-slate-900 notdark:text-white shadow-sm"
+              : "text-slate-600 notdark:text-slate-400 hover:bg-white/50 notdark:hover:bg-slate-700"
           )}
         >
           {step.id}
@@ -130,27 +130,27 @@ const TimelineNav = ({ steps, activeStep, onStepClick }: { steps: ProcessStep[],
 const TimelineContent = ({ step }: { step: ProcessStep }) => (
   <div>
     <span className="text-sm font-bold text-blue-500">{step.id}</span>
-    <h2 className="text-3xl font-bold mt-2 text-slate-900 dark:text-white">{step.title}</h2>
-    <p className="mt-1 text-slate-600 dark:text-slate-400">{step.subtitle}</p>
-    <p className="mt-4 text-slate-700 dark:text-slate-300">{step.description}</p>
+    <h2 className="text-3xl font-bold mt-2 text-slate-900 notdark:text-white">{step.title}</h2>
+    <p className="mt-1 text-slate-600 notdark:text-slate-400">{step.subtitle}</p>
+    <p className="mt-4 text-slate-700 notdark:text-slate-300">{step.description}</p>
     <div className="mt-6 grid sm:grid-cols-2 gap-4">
       {step.details.map((detail, i) => (
         <div key={i} className="flex items-center gap-3">
-          <div className="w-5 h-5 bg-green-500/10 dark:bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-xs">✓</div>
-          <span className="text-sm text-slate-700 dark:text-slate-300">{detail}</span>
+          <div className="w-5 h-5 bg-green-500/10 notdark:bg-green-500/20 text-green-500 rounded-full flex items-center justify-center text-xs">✓</div>
+          <span className="text-sm text-slate-700 notdark:text-slate-300">{detail}</span>
         </div>
       ))}
     </div>
-    <div className="mt-6 flex items-center gap-3 p-3 bg-slate-100 dark:bg-slate-800 rounded-lg">
+    <div className="mt-6 flex items-center gap-3 p-3 bg-slate-100 notdark:bg-slate-800 rounded-lg">
       <span className="text-blue-500">⏳</span>
-      <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Duration: {step.duration}</span>
+      <span className="text-sm font-semibold text-slate-700 notdark:text-slate-300">Duration: {step.duration}</span>
     </div>
   </div>
 );
 
 const TimelinePhoneMockup = ({ image }: { image: string }) => (
     <div className="flex items-center justify-center">
-        <div className="w-64 h-[512px] bg-slate-800 dark:bg-slate-900 rounded-[40px] p-4 border-4 border-slate-700 dark:border-slate-800 shadow-2xl">
+        <div className="w-64 h-[512px] bg-slate-800 notdark:bg-slate-900 rounded-[40px] p-4 border-4 border-slate-700 notdark:border-slate-800 shadow-2xl">
             <div className="w-full h-full bg-black rounded-[24px] overflow-hidden">
                 <img src={image} alt="App Screenshot" className="w-full h-full object-cover" />
             </div>
@@ -161,7 +161,7 @@ const TimelinePhoneMockup = ({ image }: { image: string }) => (
 
 const BottomTimeline = ({ steps, activeIndex, onStepClick }: { steps: ProcessStep[], activeIndex: number, onStepClick: (id: string) => void }) => (
   <div className="mt-16">
-    <div className="relative w-full h-1 bg-slate-200 dark:bg-slate-800 rounded-full">
+    <div className="relative w-full h-1 bg-slate-200 notdark:bg-slate-800 rounded-full">
       <motion.div
         className="absolute h-1 bg-blue-500 rounded-full"
         initial={{ width: 0 }}
@@ -180,13 +180,13 @@ const BottomTimeline = ({ steps, activeIndex, onStepClick }: { steps: ProcessSte
         <button key={step.id} onClick={() => onStepClick(step.id)} className="text-center w-1/4">
           <span className={cn(
             "text-sm font-semibold transition-colors",
-            i <= activeIndex ? "text-blue-500" : "text-slate-500 dark:text-slate-400"
+            i <= activeIndex ? "text-blue-500" : "text-slate-500 notdark:text-slate-400"
           )}>
             {step.id}
           </span>
           <p className={cn(
             "text-xs mt-1 transition-colors",
-            i <= activeIndex ? "text-slate-700 dark:text-slate-300" : "text-slate-400 dark:text-slate-500"
+            i <= activeIndex ? "text-slate-700 notdark:text-slate-300" : "text-slate-400 notdark:text-slate-500"
           )}>
             {step.title.split(' ')[0]}
           </p>

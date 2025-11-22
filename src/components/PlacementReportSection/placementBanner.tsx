@@ -79,7 +79,7 @@ export function PlacementBanner() {
               <ArrowRight className="size-4" />
             </Link>
 
-            <h1 className="mt-8 sm:mt-10 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 dark:text-white">
+            <h1 className="mt-8 sm:mt-10 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight text-gray-900 notdark:text-white">
               Production Ready Digital Marketing Blocks
             </h1>
             <p className="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-muted-foreground">

@@ -44,12 +44,12 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             {/* --- DESKTOP VIEW (timeline style) --- */}
             <div className="hidden md:flex flex-col z-40 items-start top-40 self-start max-w-xs lg:max-w-sm md:w-full sticky">
               {/* Timeline dot */}
-              <div className="h-10 absolute left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
+              <div className="h-10 absolute left-3 w-10 rounded-full bg-white notdark:bg-black flex items-center justify-center">
+                <div className="h-4 w-4 rounded-full bg-neutral-200 notdark:bg-neutral-800 border border-neutral-300 notdark:border-neutral-700 p-2" />
               </div>
 
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-bold text-neutral-500 dark:text-neutral-500 mb-4 pl-16">
+              <h3 className="text-xl md:text-2xl font-bold text-neutral-500 notdark:text-neutral-500 mb-4 pl-16">
                 {item.title}
               </h3>
 
@@ -60,9 +60,9 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </div>
 
             {/* --- MOBILE VIEW (accordion) --- */}
-            <div className="md:hidden w-full border border-neutral-200 dark:border-neutral-700 rounded-lg overflow-hidden">
+            <div className="md:hidden w-full border border-neutral-200 notdark:border-neutral-700 rounded-lg overflow-hidden">
               <button
-                className="flex justify-between items-center w-full p-4 bg-neutral-100 dark:bg-neutral-800 text-left font-semibold text-neutral-700 dark:text-neutral-300"
+                className="flex justify-between items-center w-full p-4 bg-neutral-100 notdark:bg-neutral-800 text-left font-semibold text-neutral-700 notdark:text-neutral-300"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 {item.title}
@@ -99,7 +99,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         {/* Timeline line */}
         <div
           style={{ height: height + "px" }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 notdark:via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{

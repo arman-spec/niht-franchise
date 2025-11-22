@@ -30,7 +30,7 @@ const CourseCard: React.FC<CourseCardProps> = ({
 }) => (
   <motion.div
     whileHover={{ scale: 1.03 }} // Removed tilt rotation
-    className="relative flex flex-col md:flex-row overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 bg-gradient-to-br from-white/90 to-white/60 dark:from-neutral-900/80 dark:to-neutral-900/60"
+    className="relative flex flex-col md:flex-row overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 bg-gradient-to-br from-white/90 to-white/60 notdark:from-neutral-900/80 notdark:to-neutral-900/60"
   >
     {/* Image Section */}
     <div className="relative md:w-1/2 h-64 md:h-auto">
@@ -52,11 +52,11 @@ const CourseCard: React.FC<CourseCardProps> = ({
         {tag}
       </div>
 
-      <h3 className="text-3xl font-extrabold mb-4 text-gray-900 dark:text-white hover:text-blue-600 transition">
+      <h3 className="text-3xl font-extrabold mb-4 text-gray-900 notdark:text-white hover:text-blue-600 transition">
         {title}
       </h3>
 
-      <div className="text-gray-700 dark:text-gray-300 space-y-2 mb-6">
+      <div className="text-gray-700 notdark:text-gray-300 space-y-2 mb-6">
         <p><strong>Best For:</strong> {bestFor}</p>
         <p><strong>Mode:</strong> {mode}</p>
         {startFrom && <p><strong>Starts From:</strong> {startFrom}</p>}
@@ -107,12 +107,12 @@ export const RecommendedCourses = () => {
   ];
 
   return (
-    <section className="py-28 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-neutral-950 dark:to-neutral-900">
+    <section className="py-28 bg-gradient-to-b from-gray-50 to-gray-100 notdark:from-neutral-950 notdark:to-neutral-900">
       <div className="max-w-7xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
+        <h2 className="text-4xl font-extrabold text-gray-900 notdark:text-white mb-4">
           Premium Recommended Courses
         </h2>
-        <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-400 mb-16">
+        <p className="max-w-2xl mx-auto text-gray-600 notdark:text-gray-400 mb-16">
           Explore our specially curated premium courses, designed to prepare you for top-tier placements and career success in digital marketing.
         </p>
 

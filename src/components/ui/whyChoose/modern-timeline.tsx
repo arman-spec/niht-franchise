@@ -30,10 +30,10 @@ const getStatusConfig = (status: SyllabusItem["status"]) => {
       badgeText: "text-success"
     },
     current: {
-      progressColor: "bg-blue-600 dark:bg-blue-400",
-      borderColor: "border-blue-600/20 dark:border-blue-400/20",
-      badgeBg: "bg-blue-100 dark:bg-blue-900/30",
-      badgeText: "text-blue-800 dark:text-blue-200"
+      progressColor: "bg-blue-600 notdark:bg-blue-400",
+      borderColor: "border-blue-600/20 notdark:border-blue-400/20",
+      badgeBg: "bg-blue-100 notdark:bg-blue-900/30",
+      badgeText: "text-blue-800 notdark:text-blue-200"
     },
     upcoming: {
       progressColor: "bg-warning",
