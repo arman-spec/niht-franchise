@@ -1,150 +1,122 @@
 "use client";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Award, TrendingUp, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { TrendingUp, Play } from "lucide-react";
+import heroImage from "@/assets/Niht-Hero-Banner.webp";
 import Google from "@/assets/Social_Icons/Google.webp";
-import heroImage from "@/assets/Niht-Full-Hero-Banner.webp";
-import heroImage2 from "@/assets/niht-banner-image-mudit-sir.webp";
-import heroImage3 from "@/assets/niht-banner-lekha.webp";
+import FaceBook from "@/assets/Social_Icons/Meta-Logo.webp";
+import { usePopup } from "./form/PopupProvider";
 import Image from "next/image";
+import FranchiseForm from "./form/FrachiseForm";
 
 const HeroSection = () => {
-  const slides = [
-    {
-      id: 1,
-      title: "Lorem ipsum dolor sit amet",
-      subtitle:
-        "Consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      img: heroImage,
-    },
-    {
-      id: 2,
-      title: "Dolor sit amet consectetur",
-      subtitle:
-        "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.",
-      img: heroImage2,
-    },
-    {
-      id: 3,
-      title: "Sed ut perspiciatis unde omnis",
-      subtitle:
-        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.",
-      img: heroImage3,
-    },
-  ];
+  const { openPopup } = usePopup();
 
   return (
-    <section className="relative pt-24 md:pt-32">
-      <div className="relative">
-       
+    <section className="relative min-h-[84vh] bg-[linear-gradient(135deg,hsl(233_47%_7%)_0%,hsl(217_91%_60%)_50%,hsl(218_87%_61%)_100%)] overflow-hidden mt-0 md:mt-26">
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/40"></div>
 
-        <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
-          autoplay={{ delay: 5000 }}
-          pagination={{ clickable: true }}
-          navigation={false}
-          // navigation={{ prevEl: ".custom-prev", nextEl: ".custom-next" }}
-          loop
-        >
-          {slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <div
-                className="relative w-full h-[80vh] md:h-[70vh] flex items-center justify-center bg-no-repeat bg-center bg-cover"
-                style={{ backgroundImage: `url(${slide.img})` }}
-              >
+      {/* Grid layout — mobile: stacked, desktop: 2 columns */}
+      <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[84vh]">
+        {/* LEFT — Content (mobile: below image, desktop: left) */}
+        <div className="relative flex items-center justify-center  px-4 py-10 lg:py-16 lg:px-16 order-2 lg:order-1">
+          <div className="max-w-xl space-y-8 text-center lg:text-left">
+            {/* Badges */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-6 items-center text-white font-semibold tracking-wide">
+              {/* Google Partner */}
+              <div className="flex items-center gap-2 text-lg sm:text-base">
                 <Image
-                  src={slide.img}
-                  alt={slide.title}
-                  fill
-                  priority
-                  className="object-cover -z-10"
+                  src={Google}
+                  alt="Google Partner"
+                  className="w-8 h-8 sm:w-6 sm:h-6" // bigger on mobile, smaller on larger screens
                 />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/20"></div>
-
-                {/* Content */}
-                <div className="relative container mx-auto px-6 text-center lg:text-left space-y-6 z-10">
-                  {/* Badges */}
-                  
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                    <Badge className="badge-bounce-horizontal btn-shine relative overflow-hidden bg-blue-400/20 text-white border-white/30 px-4 py-1 rounded-full cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-blue-400/30 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:via-white/10 before:to-white/20 before:animate-wave">
-                      <Award className="w-4 h-4 mr-2 inline-block" />
-                      AI-Powered
-                    </Badge>
-                    <Badge className="badge-bounce-horizontal btn-shine relative overflow-hidden bg-blue-400/20 text-white border-white/30 px-4 py-1 rounded-full cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-blue-400/30 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:via-white/10 before:to-white/20 before:animate-wave">
-                      <Image
-                        src={Google}
-                        alt="Google Partner"
-                        className="w-3 h-3 mr-2 inline-block"
-                      />
-                      Google Partner
-                    </Badge>
-                    <Badge className="badge-bounce-horizontal btn-shine relative overflow-hidden bg-blue-400/20 text-white border-white/30 px-4 py-1 rounded-full cursor-pointer transition-all duration-300 hover:scale-105 hover:bg-blue-400/30 before:absolute before:inset-0 before:bg-gradient-to-r before:from-white/20 before:via-white/10 before:to-white/20 before:animate-wave">
-                      <TrendingUp className="w-4 h-4 mr-2 inline-block" />
-                      Since 2005
-                    </Badge>
-                  </div>
-
-                  {/* Headline */}
-                  <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
-                    {slide.title}
-                  </h1>
-                  <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto lg:mx-0">
-                    {slide.subtitle}
-                  </p>
-
-                  {/* Stats */}
-                  <div className="grid grid-cols-3 gap-4 py-4 max-w-md mx-auto lg:mx-0">
-                    <div className="text-center">
-                      <div className="text-2xl md:text-4xl font-bold text-[#A3CD39]">
-                        52K+
-                      </div>
-                      <div className="text-white/80 text-sm">Students</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl md:text-4xl font-bold text-[#A3CD39]">
-                        48K+
-                      </div>
-                      <div className="text-white/80 text-sm">Placed</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl md:text-4xl font-bold text-[#A3CD39]">
-                        20+
-                      </div>
-                      <div className="text-white/80 text-sm">Years</div>
-                    </div>
-                  </div>
-
-                  {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-                    <Button
-                      variant="cta"
-                      size="lg"
-                      className="w-full sm:w-auto px-8 py-4"
-                    >
-                      Enroll Now
-                    </Button>
-                    <Button
-                      variant="secondary_cta"
-                      size="lg"
-                      className="w-full sm:w-auto px-8 py-4 flex items-center justify-center"
-                    >
-                      <Play className="w-5 h-5 mr-2" />
-                      Download Brochure
-                    </Button>
-                  </div>
-                </div>
+                <span className="">
+                  Google Partner
+                </span>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+
+              {/* Meta Partner */}
+              <div className="flex items-center gap-2 text-lg sm:text-base">
+                <Image
+                  src={FaceBook}
+                  alt="Meta Partner"
+                  className="w-9 h-9 sm:w-6 sm:h-6"
+                />
+                <span>
+                  Meta Partner
+                </span>
+              </div>
+
+              {/* Since 2005 */}
+              <div className="flex items-center gap-2 rounded-full px-3 py-1 pr-[10px] text-lg sm:text-base">
+                <TrendingUp className="w-9 h-9 sm:w-6 sm:h-6 text-green-400" />
+                <span>
+                  Since 2005
+                </span>
+              </div>
+            </div>
+
+            {/* Headline */}
+            <div className="space-y-4">
+              <h1 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                India&apos;s #1 AI-Powered Digital Marketing Institute
+              </h1>
+              <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
+                100% Job Assistance | Learn from Industry Experts | 20+ Global Certifications |
+                Work on Live Projects | Hands-on training in NIHT&apos;s in-house studio |
+                Global library of case studies.
+              </p>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-[#A3CD39]">52K+</div>
+                <div className="text-white/80 text-sm">Students Trained</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-[#A3CD39]">48K+</div>
+                <div className="text-white/80 text-sm">Placed</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-[#A3CD39]">100%</div>
+                <div className="text-white/80 text-sm">Job Assistance</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-[#A3CD39]">93%</div>
+                <div className="text-white/80 text-sm">Placement Rate</div>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+              <Button
+                onClick={openPopup}
+                variant="cta"
+                size="lg"
+                className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4"
+              >
+                Enroll Now
+              </Button>
+              <Button
+                onClick={openPopup}
+                variant="secondary_cta"
+                size="lg"
+                className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-center"
+              >
+                <Play className="w-5 h-5 mr-2" />
+                Download Free Brochure
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* RIGHT — Image (mobile: top, desktop: right) */}
+    
+        <div className="relative order-1 lg:order-2 flex items-center justify-center ">
+          <FranchiseForm />
+        </div>
+
       </div>
     </section>
   );
